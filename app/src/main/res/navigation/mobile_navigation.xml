@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_ciudades">
+
+    <fragment
+        android:id="@+id/nav_ciudades"
+        android:name="com.softulp.menunavpractica.ui.ciudades.CiudadesFragment"
+        android:label="@string/menu_ciudades"
+        tools:layout="@layout/fragment_ciudades" >
+        <action
+            android:id="@+id/action_nav_ciudades_to_detallesCiudadesFragment"
+            app:destination="@id/detallesCiudadesFragment" />
+        <action
+            android:id="@+id/action_nav_ciudades_to_detallesCiudadesFragment2"
+            app:destination="@id/detallesCiudadesFragment" />
+        <action
+            android:id="@+id/action_nav_ciudades_to_traductorMainFragment"
+            app:destination="@id/traductorMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallesCiudadesFragment"
+        android:name="com.softulp.menunavpractica.ui.ciudades.DetallesCiudadesFragment"
+        android:label="@string/detalle_de_ciudad"
+        tools:layout="@layout/fragment_detalles_ciudades" >
+        <action
+            android:id="@+id/action_detallesCiudadesFragment_to_nav_ciudades"
+            app:destination="@id/nav_ciudades" />
+    </fragment>
+    <fragment
+        android:id="@+id/traductorMainFragment"
+        android:name="com.softulp.menunavpractica.traductor.TraductorMainFragment"
+        android:label="fragment_traductor_main"
+        tools:layout="@layout/fragment_traductor_main" >
+        <action
+            android:id="@+id/action_traductorMainFragment_to_nav_ciudades"
+            app:destination="@id/nav_ciudades" />
+        <action
+            android:id="@+id/action_traductorMainFragment_to_traducidaFragment"
+            app:destination="@id/traducidaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/traducidaFragment"
+        android:name="com.softulp.menunavpractica.traductor.TraducidaFragment"
+        android:label="TraducidaFragment" >
+        <action
+            android:id="@+id/action_traducidaFragment_to_traductorMainFragment"
+            app:destination="@id/traductorMainFragment" />
+    </fragment>
+</navigation>
